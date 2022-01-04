@@ -1,0 +1,76 @@
+@import "../../../styles/mixins";
+
+.aside {
+  position: relative;
+}
+
+.toggle_button {
+  position: absolute;
+  top: 10px;
+  right: 100%;
+  padding: 14px 4px;
+  background-color: #fff;
+  border: 1px solid #e4e6eb;
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 0 8px 0 rgba(204, 212, 230, 0.3);
+
+  @include mobile {
+    top: unset;
+    bottom: 100%;
+    right: calc(50% - 14px);
+    margin: 0  auto;
+    padding: 4px 14px;
+    border-radius: 3px 3px 0 0;
+    border-right: 1px solid #e4e6eb;
+    border-bottom: none;
+  }
+}
+
+.toggle_caret {
+  width: 15px;
+  height: 15px;
+  transform: rotate(90deg);
+
+  @include mobile {
+    transform: rotate(180deg);
+  }
+}
+
+.sidebar_container {
+  min-width: 10px;
+  height: 100%;
+  border-left: 2px solid #e4e6eb;
+  background-color: #edf0f5;
+  opacity: 0.8;
+
+  @include mobile {
+    width: 100%;
+    min-width: unset;
+    min-height: 10px;
+  }
+}
+
+.aside.open {
+  .sidebar_container {
+    width: 339px;
+
+    @include mobile {
+      width: 100%;
+      height: 50vh;
+    }
+  }
+
+  .toggle_caret {
+    transform: rotate(-90deg);
+
+    @include mobile {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.content {
+  padding: 24px 20px 20px;
+  height: 100%;
+}

@@ -1,0 +1,12 @@
+@import "../../styles/mixins";
+
+.app {
+    display: flex;
+    align-items: stretch;
+    min-height: 100vh;
+
+    @include mobile {
+        flex-direction: column;
+        justify-content: stretch;
+    }
+}
